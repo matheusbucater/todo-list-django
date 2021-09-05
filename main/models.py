@@ -1,13 +1,18 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class ToDoList(models.Model):
-	
+
+	user = models.ForeignKey(User, on_delete=models.CASCADE)
 	title = models.CharField(max_length=255)
 
 	def __str__(self) -> str:
 
 		return self.title
+
+	def todos_count(self):
+		return ToDoList.objects.filter(user=self.user).aggregate(models.Count('id'))['id__count']
 
 	def get_tasks(self):
 
@@ -30,6 +35,3 @@ class Task(models.Model):
 	def __str__(self) -> str:
 
 		return self.text
-
-
-

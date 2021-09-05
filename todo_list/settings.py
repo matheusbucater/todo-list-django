@@ -38,8 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'debug_toolbar',
+    'crispy_forms',
+    'register.apps.RegisterConfig',
     'main',
 ]
+
+CRISPY_TEMPLATE_PACK="bootstrap4"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -61,7 +65,7 @@ ROOT_URLCONF = 'todo_list.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [str(BASE_DIR.joinpath('templates'))],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -74,6 +78,9 @@ TEMPLATES = [
     },
 ]
 
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
 WSGI_APPLICATION = 'todo_list.wsgi.application'
 
 
@@ -85,8 +92,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'todo_db',
         'HOST': 'localhost',
-        'USER': 'root',
-        'PASSWORD': 'M@rmarcoco123'
+        'USER': 'django',
+        'PASSWORD': 'django-pass'
     }
 }
 
@@ -113,9 +120,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Sao_Paulo'
 
 USE_I18N = True
 

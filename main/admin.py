@@ -16,9 +16,9 @@ class TaskInline(admin.TabularInline):
 class ToDoListAdmin(admin.ModelAdmin):
 
 	inlines = [TaskInline]
-	list_display = ['title', 'tasks']
+	list_display = ['title', 'tasks', 'user']
 
-	
+
 	def get_queryset(self, request):
 
 		queryset = super().get_queryset(request)
@@ -28,8 +28,8 @@ class ToDoListAdmin(admin.ModelAdmin):
 		return queryset
 
 	@admin.display(ordering="_tasks_count")
-	def tasks(self, todo_list):	
-		
+	def tasks(self, todo_list):
+
 		tasks = ''
 		for task in todo_list.get_tasks():
 			url = (reverse('admin:main_task_changelist')

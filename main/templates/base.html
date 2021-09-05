@@ -1,0 +1,22 @@
+<html>
+<head>
+  <a href="/">Home</a>
+  <title>{% block title %}My Website{% endblock title %}</title>
+  <h2>Olá, {% block user %}Visitante{% endblock user %}</h2>
+  {% if user.is_authenticated %}
+    <a href='/acc/logout'>Sair</a>
+  {% else %}
+    <a href='/accounts/login'>Entrar</a>
+    <a href="/register">Cadastrar</a>
+  {% endif %}
+
+</head>
+
+<body>
+  <div id="content" name="content">
+    {% block content %}
+    {% endblock content %}
+  </div>
+</body>
+
+</html>

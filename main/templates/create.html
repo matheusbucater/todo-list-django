@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Create New List{% endblock title %}
+{% block user %}{{ user }}{% endblock user%}
+
+{% block content %}
+<h2>Criar nova lista</h2>
+  <form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" name="save">Criar</button>
+  </form>
+{% endblock content %}

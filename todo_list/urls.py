@@ -15,9 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from register import views
 import debug_toolbar
+from django.contrib.auth.views import LogoutView
+from django.conf import settings
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('__debug__/', include(debug_toolbar.urls)),
+    path('admin/', admin.site.urls),
+    path('register/', views.register, name='register'),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('', include('main.urls')),
+    path('logout/', LogoutView.as_view(), {'next_page': settings.LOGOUT_REDIRECT_URL}, name='logout'),
 ]

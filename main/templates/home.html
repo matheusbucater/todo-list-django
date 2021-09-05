@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock title %}
+{% block user %}{{ user }}{% endblock user %}
+
+{% block content %}
+<h2>Suas Listas</h2>
+
+  <ul>
+    {% for list in todo_list %}
+    <li> <a href="{{ list_url }}/{{ list.pk }}">{{ list }}</a></li>
+    <form action="/delete-todo-list/{{ list.pk }}/" method="post">
+      {% csrf_token %}
+      <button name="delete_todo_list" type="submit">Delete</button>
+    </form>
+    {% empty %}
+      <h3>Você não tem nenhuma lista criada.</h3>
+    {% endfor %}
+  </ul>
+
+
+  <form action="/create/" method="post">
+    {% csrf_token %}
+    <button name="add_todo" type="submit">Adicionar Lista</button>
+  </form>
+{% endblock content %}
