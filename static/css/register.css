@@ -1,0 +1,36 @@
+small {
+  visibility: hidden;
+}
+
+#id_username, #id_password1, #id_email, #id_password2 {
+  margin-top: 20px;
+  margin-left: 30%;
+  height: 35px;
+  width: 250px;
+}
+
+.requiredField {
+  font-size: 20px;
+  margin-left: 30%;
+}
+
+/* {
+  margin-top: 40px;
+  margin-left: 35%;
+  height: 35px;
+  width: 250px;
+}
+
+ {
+  margin-top: 40px;
+  margin-left: 35%;
+  height: 35px;
+  width: 250px;
+}
+
+ {
+  margin-top: 40px;
+  margin-left: 35%;
+  height: 35px;
+  width: 250px;
+} */

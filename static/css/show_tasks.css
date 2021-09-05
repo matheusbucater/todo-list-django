@@ -49,6 +49,7 @@
   margin-left: 35%;
   width: 120px;
 }
+
 #uncomplete-task-button {
   background-color: #f2fc99;
   border-color: white;
@@ -57,4 +58,11 @@
   border-width: 1px;
   margin-left: 35%;
   width: 120px;
+}
+
+#empty-task {
+  padding-top: 40px;
+  margin-left: 35%;
+  color: white;
+  font-size: 18px;
 }

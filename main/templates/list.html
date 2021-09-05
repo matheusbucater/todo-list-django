@@ -33,6 +33,8 @@
         {% endif %}
 
       </form>
+    {% empty %}
+      <h3 id='empty-task'>=> Você não tem nenhuma tarefa adicionada.</h3>
     {% endfor %}
   </ul>
 {% endblock content %}
