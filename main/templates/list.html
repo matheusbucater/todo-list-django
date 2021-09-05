@@ -1,33 +1,34 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}View List{% endblock title %}
 {% block user %}{{ user }}{% endblock user %}
 
 
 {% block content %}
-  <h1>{{ todo_list.title }}</h1>
+  <h1 id='list-h1'>{{ todo_list.title }}</h1>
   <form action="/add-task/{{ todo_list.id }}" method="post">
     {% csrf_token %}
-    <input type="text" name="textfield">
-    <button name="add_task" type="submit">Adicionar tarefa</button>
+    <input id='text-add' type="text" name="textfield">
+    <button id='button-add' name="add_task" type="submit">Adicionar tarefa</button>
   </form>
   <ul>
     {% for task in todo_list.task_set.all  %}
       {% if task.complete %}
-        <li>{{ task.text }} - COMPLETA</li>
+        <li id='task'>=> {{ task.text }} - COMPLETA</li>
         {% else %}
-        <li>{{ task.text }} - INCOMPLETA</li>
+        <li id='task'>=> {{ task.text }} - INCOMPLETA</li>
       {% endif %}
       <form action="/delete-task/{{ task.pk }}/{{ todo_list.id }}" method="post">
         {% csrf_token %}
-        <button name="delete_task" type="submit">Excluir</button>
+        <button id='delete-task-button' name="delete_task" type="submit">Excluir</button>
       </form>
       <form action="/complete-uncomplete-task/{{ task.pk }}/{{ todo_list.id }}" method="post">
         {% csrf_token %}
         {% if task.complete %}
-          <button name="unlcomplete_task" type="submit">Desfazer</button>
+          <button id='uncomplete-task-button' name="unlcomplete_task" type="submit">Desfazer</button>
         {% else %}
-          <button name="complete_task" type="submit">Completar</button>
+          <button id='complete-task-button' name="complete_task" type="submit">Completar</button>
 
         {% endif %}
 

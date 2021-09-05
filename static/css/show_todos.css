@@ -1,0 +1,43 @@
+#listas-h2 {
+  color: white;
+  font-size: 40px;
+  margin: 0 35%;
+  padding-bottom: 40px;
+}
+
+#todo {
+  color: white;
+  font-size: 25px;
+  margin-left: 30px
+}
+
+#delete-form {
+  margin-right: 100%;
+}
+
+#delete-button {
+  background-color: #fc6a6c;
+  border-color: white;
+  border: solid;
+  border-color: white;
+  border-width: 1px;
+  margin-left: 40px;
+  width: 120px;
+  margin-bottom: 30px;
+}
+
+#add-form {
+  margin-top: 20px;
+  margin-right: 35%;
+}
+
+#add-button {
+  width: 180px;
+  margin-left: 55%;
+}
+
+#empty {
+  color: black;
+  font-size: 20px;
+  margin-left: 30px
+}

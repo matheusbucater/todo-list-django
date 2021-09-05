@@ -1,0 +1,32 @@
+#create-h2 {
+  color: white;
+  font-size: 40px;
+  margin-left: 30%;
+  margin-bottom: 20px;
+}
+
+.errorlist {
+  visibility: hidden;
+}
+
+#label {
+  margin-left: 22%;
+}
+
+#id_title {
+  margin-top: 20px;
+  margin-left: 5px;
+  margin-bottom: 20px;
+  height: 35px;
+  width: 300px;
+}
+
+#id_task {
+  height: 35px;
+  width: 300px;
+}
+
+#create-button {
+  width: 150px;
+  margin-left: 40%;
+}

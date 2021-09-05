@@ -1,0 +1,60 @@
+#list-h1 {
+  color: white;
+  font-size: 40px;
+  margin-left: 30%;
+}
+
+#form-add {
+  display: flex;
+}
+
+#text-add {
+  margin-top: 40px;
+  margin-left: 35%;
+  height: 35px;
+  width: 250px;
+}
+
+#button-add {
+  height: 35px;
+  width: 200px;
+  margin-left: 38%;
+  margin-top: 5%;
+  margin-bottom: 40px;
+}
+
+#task {
+  padding-top: 40px;
+  margin-left: 35%;
+  color: white;
+  font-size: 18px;
+}
+
+#delete-task-button {
+  background-color: #fc6a6c;
+  border-color: white;
+  border: solid;
+  border-color: white;
+  border-width: 1px;
+  margin-left: 35%;
+  width: 120px;
+}
+
+#complete-task-button {
+  background-color: #a8fc99;
+  border-color: white;
+  border: solid;
+  border-color: white;
+  border-width: 1px;
+  margin-left: 35%;
+  width: 120px;
+}
+#uncomplete-task-button {
+  background-color: #f2fc99;
+  border-color: white;
+  border: solid;
+  border-color: white;
+  border-width: 1px;
+  margin-left: 35%;
+  width: 120px;
+}
